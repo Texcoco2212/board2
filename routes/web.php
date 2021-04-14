@@ -22,3 +22,8 @@ Route::resource('posts', 'PostController', ['only' => ['index','show', 'create',
 Route::get('posts/edit/{id}', 'PostController@edit');
 Route::post('posts/edit','PostController@update');
 Route::post('posts/delete/{id}', 'PostController@destroy');
+
+
+//いいね機能
+Route::get('/reply/like/{id}', 'RepliesController@like')->name('reply.like');
+Route::get('/reply/unlike/{id}', 'RepliesController@unlike')->name('reply.unlike');
